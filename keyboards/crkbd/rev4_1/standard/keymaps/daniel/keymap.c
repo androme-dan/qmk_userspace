@@ -22,12 +22,14 @@ enum layer_names {
     _NUMBER,
     _SYMBOL,
     _FUNCTION,
+    _NAVIGATION,
 };
 
 // Layer keys
 #define LT_NUM LT(_NUMBER, KC_SPC)
 #define LT_SYM LT(_SYMBOL, KC_TAB)
 #define LT_FUN LT(_FUNCTION, KC_ESC)
+#define LT_NAV LT(_NAVIGATION, KC_BSPC)
 
 // Left-hand home row mods
 #define HOME_A LGUI_T(KC_A)
@@ -43,10 +45,10 @@ enum layer_names {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT_split_3x6_3_ex2(
-        _______,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    QK_BOOT,     QK_BOOT,    KC_J,     KC_L,    KC_U,     KC_Y,    KC_QUOTE,  _______,
-        KC_RALT,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    QK_REBOOT,   QK_REBOOT,  KC_M,     HOME_N,  HOME_E,   HOME_I,  HOME_O,    KC_RALT,
-        _______,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                             KC_K,     KC_H,    KC_COMM,  KC_DOT,  KC_SLSH,   _______,
-                                             LT_FUN,  LT_NUM,  LT_SYM,      KC_ENT,     KC_BSPC,  KC_DEL
+        _______,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    QK_BOOT,     QK_BOOT,    KC_J,    KC_L,    KC_U,     KC_Y,    KC_QUOTE,  _______,
+        KC_RALT,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    QK_REBOOT,   QK_REBOOT,  KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,    KC_RALT,
+        _______,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                             KC_K,    KC_H,    KC_COMM,  KC_DOT,  KC_SLSH,   _______,
+                                             LT_FUN,  LT_NUM,  LT_SYM,      KC_ENT,     LT_NAV,  KC_DEL
 
   ),
     [_NUMBER] = LAYOUT_split_3x6_3_ex2(
@@ -67,6 +69,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,  _______,  _______,  _______,  _______,  _______,        _______,  KC_F9,  KC_F10,  KC_F11,  KC_F12,  KC_PSCR,  KC_PWR,
         KC_RALT,  KC_LGUI,  KC_LALT,  KC_LCTL,  KC_LSFT,  _______,  _______,        _______,  KC_F5,  KC_F6,   KC_F7,   KC_F8,   KC_SCRL,  KC_SLEP,
         _______,  _______,  _______,  _______,  _______,  _______,                            KC_F1,  KC_F2,   KC_F3,   KC_F4,   KC_PAUS,  KC_WAKE,
+                                                _______,  _______,  _______,        _______,  _______,  _______
+
+  ),
+    [_NAVIGATION] = LAYOUT_split_3x6_3_ex2(
+        _______,  _______,  KC_PGUP,  KC_UP,    KC_PGDN,  _______,  _______,        _______,  _______,  _______,  _______,  _______,  _______,  _______,
+        _______,  _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  _______,  _______,        _______,  _______,  KC_RSFT,  KC_RCTL,  KC_LALT,  KC_RGUI,  KC_RALT,
+        _______,  _______,  KC_HOME,  _______,  KC_END,   _______,                            _______,  _______,  _______,  _______,  _______,  _______,
                                                 _______,  _______,  _______,        _______,  _______,  _______
 
   )

@@ -33,18 +33,12 @@ enum layer_names {
 #define HOME_I LALT_T(KC_I)
 #define HOME_O RGUI_T(KC_O)
 
-// Macros
-#define KC_AE RALT(KC_Q)
-#define KC_OE RALT(KC_P)
-#define KC_UE RALT(KC_Y)
-#define KC_SS RALT(KC_S)
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT_split_3x6_3_ex2(
-        KC_SS,      KC_Q,       KC_W,       KC_F,       KC_P,       KC_B,       QK_BOOT,        QK_BOOT,        KC_J,       KC_L,       KC_U,       KC_Y,       KC_QUOTE,       KC_UE,
-        KC_AE,      HOME_A,     HOME_R,     HOME_S,     HOME_T,     KC_G,       QK_REBOOT,      QK_REBOOT,      KC_M,       HOME_N,     HOME_E,     HOME_I,     HOME_O,         KC_OE,
-        _______,    KC_Z,       KC_X,       KC_C,       KC_D,       KC_V,                                       KC_K,       KC_H,       KC_COMM,    KC_DOT,     KC_SLSH,        _______,
-                                                        KC_ESC,     KC_SPC,     KC_TAB,         KC_ENT,         KC_BSPC,    KC_DEL
+        _______,        KC_Q,       KC_W,       KC_F,       KC_P,       KC_B,       QK_BOOT,        QK_BOOT,        KC_J,       KC_L,       KC_U,       KC_Y,       KC_QUOTE,       _______,
+        KC_RALT,        HOME_A,     HOME_R,     HOME_S,     HOME_T,     KC_G,       QK_REBOOT,      QK_REBOOT,      KC_M,       HOME_N,     HOME_E,     HOME_I,     HOME_O,         KC_RALT,
+        _______,        KC_Z,       KC_X,       KC_C,       KC_D,       KC_V,                                       KC_K,       KC_H,       KC_COMM,    KC_DOT,     KC_SLSH,        _______,
+                                                            KC_ESC,     KC_SPC,     KC_TAB,         KC_ENT,         KC_BSPC,    KC_DEL
 
   )
 };

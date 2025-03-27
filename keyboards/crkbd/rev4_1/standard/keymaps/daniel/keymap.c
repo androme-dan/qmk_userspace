@@ -1,20 +1,3 @@
-/*
-Copyright 2024 Daniel Wieser <@androme-dan>
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
 #include QMK_KEYBOARD_H
 
 enum layer_names {
@@ -23,6 +6,7 @@ enum layer_names {
     _SYMBOL,
     _FUNCTION,
     _NAVIGATION,
+    _MEDIA,
 };
 
 // Layer keys
@@ -30,6 +14,7 @@ enum layer_names {
 #define LT_SYM LT(_SYMBOL, KC_TAB)
 #define LT_FUN LT(_FUNCTION, KC_ESC)
 #define LT_NAV LT(_NAVIGATION, KC_BSPC)
+#define LT_MED LT(_MEDIA, KC_DEL)
 
 // Left-hand home row mods
 #define HOME_A LGUI_T(KC_A)
@@ -48,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    QK_BOOT,     QK_BOOT,    KC_J,    KC_L,    KC_U,     KC_Y,    KC_QUOTE,  _______,
         KC_RALT,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    QK_REBOOT,   QK_REBOOT,  KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,    KC_RALT,
         _______,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                             KC_K,    KC_H,    KC_COMM,  KC_DOT,  KC_SLSH,   _______,
-                                             LT_FUN,  LT_NUM,  LT_SYM,      KC_ENT,     LT_NAV,  KC_DEL
+                                             LT_FUN,  LT_NUM,  LT_SYM,      KC_ENT,     LT_NAV,  LT_MED
 
   ),
     [_NUMBER] = LAYOUT_split_3x6_3_ex2(
@@ -78,5 +63,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,  KC_HOME,  _______,  KC_END,   _______,                            _______,  _______,  _______,  _______,  _______,  _______,
                                                 _______,  _______,  _______,        _______,  _______,  _______
 
+  ),
+    [_MEDIA] = LAYOUT_split_3x6_3_ex2(
+        RM_TOGG,  RM_NEXT,  _______,  KC_VOLU,  _______,  _______,  _______,        _______,  _______,  _______,  _______,  _______,  _______,  _______,
+        RM_HUEU,  RM_SATU,  KC_BRID,  KC_VOLD,  KC_BRIU,  _______,  _______,        _______,  _______,  KC_RSFT,  KC_RCTL,  KC_LALT,  KC_RGUI,  KC_RALT,
+        RM_SPDU,  RM_VALU,  _______,  KC_MUTE,  _______,  _______,                            _______,  _______,  _______,  _______,  _______,  _______,
+                                                _______,  _______,  _______,        _______,  _______,  _______
   )
 };

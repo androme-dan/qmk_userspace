@@ -1,7 +1,2 @@
-# Enable RGB matrix
-RGB_MATRIX_DRIVER = ws2812
-RGB_MATRIX_ENABLE = yes
-RGBLIGHT_ENABLE = no
-
 # Caps word
 CAPS_WORD_ENABLE = yes

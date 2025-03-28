@@ -30,10 +30,10 @@ enum layer_names {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT_split_3x6_3_ex2(
-        EE_CLR,   KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    QK_BOOT,     QK_BOOT,    KC_J,    KC_L,    KC_U,     KC_Y,    KC_QUOTE,  EE_CLR,
-        KC_RALT,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    QK_REBOOT,   QK_REBOOT,  KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,    KC_RALT,
-        _______,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                             KC_K,    KC_H,    KC_COMM,  KC_DOT,  KC_SLSH,   _______,
-                                             LT_FUN,  LT_NUM,  LT_SYM,      KC_ENT,     LT_NAV,  LT_MED
+        _______,   KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,   _______,     _______,  KC_J,    KC_L,    KC_U,     KC_Y,    KC_QUOTE,  _______,
+        KC_RALT,  HOME_A,  HOME_R,  HOME_S,  HOME_T,  KC_G,    _______,     _______,  KC_M,    HOME_N,  HOME_E,   HOME_I,  HOME_O,    KC_RALT,
+        _______,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                           KC_K,    KC_H,    KC_COMM,  KC_DOT,  KC_SLSH,   _______,
+                                             LT_FUN,  LT_NUM,  LT_SYM,      KC_ENT,   LT_NAV,  LT_MED
 
   ),
     [_NUMBER] = LAYOUT_split_3x6_3_ex2(
@@ -65,9 +65,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   ),
     [_MEDIA] = LAYOUT_split_3x6_3_ex2(
-        RM_TOGG,  RM_NEXT,  _______,  KC_VOLU,  _______,  _______,  _______,        _______,  _______,  _______,  _______,  _______,  _______,  _______,
-        RM_HUEU,  RM_SATU,  KC_BRID,  KC_VOLD,  KC_BRIU,  _______,  _______,        _______,  _______,  KC_RSFT,  KC_RCTL,  KC_LALT,  KC_RGUI,  KC_RALT,
-        RM_SPDU,  RM_VALU,  _______,  KC_MUTE,  _______,  _______,                            _______,  _______,  _______,  _______,  _______,  _______,
+        RM_TOGG,  RM_NEXT,  _______,  KC_VOLU,  _______,  KC_MNXT,  _______,        _______,  _______,  _______,  _______,  _______,  _______,  _______,
+        RM_HUEU,  RM_SATU,  KC_BRID,  KC_VOLD,  KC_BRIU,  KC_MPLY,  _______,        _______,  _______,  KC_RSFT,  KC_RCTL,  KC_LALT,  KC_RGUI,  KC_RALT,
+        RM_SPDU,  RM_VALU,  _______,  KC_MUTE,  _______,  KC_MPRV,                            _______,  _______,  _______,  _______,  _______,  _______,
                                                 _______,  _______,  _______,        _______,  _______,  _______
   )
 };
